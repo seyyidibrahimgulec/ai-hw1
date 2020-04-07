@@ -21,13 +21,12 @@ width, height = im.size
 #         r, g, b = mat[x, y]
 #         print(r)
 class Homework:
-    
+    pass
+
 
 def best_first_search(start, end):
     start_x, start_y = start
     end_x, end_y = end
-    
-
 
 
 def find_max_red(point):
@@ -94,11 +93,13 @@ def find_max_red(point):
 
     return next_point
 
+
 def distance(start, end):
     start_x, start_y = start
     end_x, end_y = end
-    return ((start_x - end_x) * (start_x - end_x)) +\
-        (((start_y - end_y) * (start_y - end_y)))
+    return ((start_x - end_x) * (start_x - end_x)) + (
+        ((start_y - end_y) * (start_y - end_y))
+    )
 
 
 point = 0, 10
