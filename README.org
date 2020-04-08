@@ -28,3 +28,4 @@ Kodu çalıştırın:
 ** BFS
 [[./bfs.png]]
 [[./bfs2.png]]
+[[./bfs2out.png]]
