@@ -11,16 +11,63 @@ class Point:
         self.b = b
 
     def distance(self, point):
-        return ((self.x - point.x) * (self.x - point.x)) + (
-            ((self.y - point.y) * (self.y - point.y))
-        )
+        return abs(self.x - point.x) + abs(self.y - point.y)
 
     def __str__(self):
         return f"{self.x, self.y, self.r, self.g, self.b}"
 
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
 
-#  Examples
-if __name__ == "__main__":
-    p1 = Point(20, 16, 0, 0, 0)
-    p2 = Point(17, 20, 0, 0, 0)
-    print(p1.distance(p2))
+    def get_neighbours(self, image):
+        neighbours = []
+        # Northwest
+        if self.x - 1 > 0 and self.y - 1 > 0:
+            neighbour_coordinate = self.x - 1, self.y - 1
+            neighbours.append(
+                Point(*neighbour_coordinate, *image.getpixel((neighbour_coordinate)))
+            )
+        # North
+        if self.y - 1 > 0:
+            neighbour_coordinate = self.x, self.y - 1
+            neighbours.append(
+                Point(*neighbour_coordinate, *image.getpixel((neighbour_coordinate)))
+            )
+        # Northeast
+        if self.x + 1 < image.width and self.y - 1 > 0:
+            neighbour_coordinate = self.x + 1, self.y - 1
+            neighbours.append(
+                Point(*neighbour_coordinate, *image.getpixel((neighbour_coordinate)))
+            )
+        # East
+        if self.x + 1 < image.width:
+            neighbour_coordinate = self.x + 1, self.y
+            neighbours.append(
+                Point(*neighbour_coordinate, *image.getpixel((neighbour_coordinate)))
+            )
+        # Southeast
+        if self.x + 1 < image.width and self.y + 1 < image.height:
+            neighbour_coordinate = self.x + 1, self.y + 1
+            neighbours.append(
+                Point(*neighbour_coordinate, *image.getpixel((neighbour_coordinate)))
+            )
+        # South
+        if self.y + 1 < image.height:
+            neighbour_coordinate = self.x, self.y + 1
+            neighbours.append(
+                Point(*neighbour_coordinate, *image.getpixel((neighbour_coordinate)))
+            )
+        # Southwest
+        if self.x - 1 > 0 and self.y + 1 < image.height:
+            neighbour_coordinate = self.x - 1, self.y + 1
+            neighbours.append(
+                Point(*neighbour_coordinate, *image.getpixel((neighbour_coordinate)))
+            )
+        # West
+        if self.x - 1 > 0:
+            neighbour_coordinate = self.x - 1, self.y
+            neighbours.append(
+                Point(*neighbour_coordinate, *image.getpixel((neighbour_coordinate)))
+            )
+
+        return neighbours

@@ -2,8 +2,7 @@ from modules.best_first_search import bfs
 
 
 if __name__ == "__main__":
-    bfs([10, 10], [90, 90])
-    # image.show()
+    bfs([675, 400], [150, 150])
     # timer = Timer()
 
     # timer.print()

@@ -3,23 +3,42 @@ class Stack:
         self.stack = []
         self.max_length = 0
         self.visited = []
+        self.last_pop = None
 
     def push(self, element):
-        self.stack.append(element)
-        if len(self.stack) > self.max_length:
-            self.max_length = len(self.stack)
+        if not self.contains(element):
+            self.stack.append(element)
+            if len(self.stack) > self.max_length:
+                self.max_length = len(self.stack)
 
     def pop(self):
-        self.visited.append(self.stack.pop(0))
+        self.last_pop = self.stack.pop(0)
+        self.visited.append(self.last_pop)
+        return self.last_pop
 
-    def sort(self, key=lambda point: 255 - point.r):
+    def distance_sort(self, end_point):
+        self.stack.sort(key=lambda point: point.distance(end_point))
+
+    def red_sort(self):
         """
         En düşük maliyetliden yükseğe doğru sıralanıyor.
         """
         # NOTE: built-in sort yerine insert yapacak bir fonksiyon
         # yazılabilir. Sonuçta dizi sürekli sıralı olacak, sadece yeni
         # eklenen elemanlar aralara yerleşecek.
-        self.stack.sort(key=key)
+        self.stack.sort(key=lambda point: 255 - point.r)
 
     def print(self):
         print(*self.stack, sep="\n")
+
+    def length(self):
+        return len(self.stack)
+
+    def contains(self, element):
+        for point in self.stack:
+            if point == element:
+                return True
+        for point in self.visited:
+            if point == element:
+                return True
+        return False
