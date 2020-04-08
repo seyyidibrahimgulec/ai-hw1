@@ -26,5 +26,5 @@ Kodu çalıştırın:
 #+end_src
 * Ekran Görüntüleri
 ** BFS
-[[file:bfs.png][bfs]]
-[[file:bfs2.png][bfs2]]
+[[./bfs.png]]
+[[./bfs2.png]]
