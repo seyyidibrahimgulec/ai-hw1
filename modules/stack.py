@@ -26,7 +26,7 @@ class Stack:
         # NOTE: built-in sort yerine insert yapacak bir fonksiyon
         # yazılabilir. Sonuçta dizi sürekli sıralı olacak, sadece yeni
         # eklenen elemanlar aralara yerleşecek.
-        self.stack.sort(key=lambda point: (255 - point.r) + point.distance(end_point))
+        self.stack.sort(key=lambda point: point.total_red + point.distance(end_point))
 
     def print(self):
         print(*self.stack, sep="\n")

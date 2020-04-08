@@ -4,7 +4,7 @@ from modules.astar import astar
 
 if __name__ == "__main__":
     # bfs([675, 400], [150, 150])
-    astar([675, 400], [150, 150])
+    astar([351, 557], [326, 478])
     # timer = Timer()
 
     # timer.print()

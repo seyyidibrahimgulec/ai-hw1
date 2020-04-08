@@ -2,6 +2,7 @@ from modules.stack import Stack
 from modules.point import Point
 from modules.img import read_image
 from modules.timer import Timer
+import time
 
 
 def astar(start_point=None, end_point=None):
@@ -32,5 +33,12 @@ def astar(start_point=None, end_point=None):
         for point in stack.last_pop.get_neighbours(image):
             stack.push(point)
         stack.red_sort(end_point)
-        image.putpixel((stack.last_pop.x, stack.last_pop.y), (0, 255, 0))
+
+
+
+    current_point = stack.last_pop
+    while(current_point.parent):
+        image.putpixel((current_point.x, current_point.y), (0, 255, 0))
+        current_point = current_point.parent
+
     image.show()
