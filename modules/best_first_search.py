@@ -5,7 +5,7 @@ from modules.timer import Timer
 
 
 def bfs(start_point=None, end_point=None):
-    image = read_image("test.jpg")
+    image = read_image()
 
     if not start_point:
         start_point = [
@@ -24,6 +24,8 @@ def bfs(start_point=None, end_point=None):
         ]
     end_point = Point(*end_point, *image.getpixel(tuple(end_point)))
 
+    timer = Timer()
+
     stack = Stack()
 
     stack.push(start_point)
@@ -34,3 +36,5 @@ def bfs(start_point=None, end_point=None):
         stack.distance_sort(end_point)
         image.putpixel((stack.last_pop.x, stack.last_pop.y), (0, 255, 0))
     image.show()
+
+    timer.print()

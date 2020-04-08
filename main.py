@@ -1,35 +1,16 @@
+import sys
+
 from modules.best_first_search import bfs
 from modules.astar import astar
 
 
 if __name__ == "__main__":
-    # bfs([675, 400], [150, 150])
-    astar([351, 557], [326, 478])
-    # timer = Timer()
-
-    # timer.print()
-    # time.sleep(1)
-    # timer.print()
-    # time.sleep(1)
-    # timer.print()
-
-    # stack = Stack()
-    # p1 = Point(20, 16, 15, 0, 0)
-    # p2 = Point(17, 20, 50, 0, 0)
-    # p3 = Point(5, 16, 0, 0, 0)
-    # p4 = Point(7, 2, 243, 0, 0)
-    # stack.print()
-    # stack.push(p1)
-    # stack.push(p2)
-    # stack.push(p3)
-    # stack.push(p4)
-    # stack.print()
-    # stack.sort()
-    # print()
-    # stack.print()
-
-    # for i in range(image.width):
-    #     for j in range(image.height):
-    #         image.putpixel((i, j), (255, 255, 255))
-
-    # image.show()
+    choice = input(
+        'Please enter "b" for best first search, "a" for a star without quotes: '
+    )
+    if choice == "b":
+        bfs()
+    elif choice == "a":
+        astar()
+    else:
+        sys.exit('Please type one of "b" or "b".')
