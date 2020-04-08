@@ -1,7 +1,30 @@
-* Ödev Konusu 
-- Resimlerde A* ve İlk en iyi algoritmaları
-- Kullanıcının girdiği bir resmin, yine kullanıcının girdiği 2 noktası arasındaki yol A* ve ilk en iyi arama algoritmaları ile bulunarak resim üzerine çizdirilecektir.
-- Bir pikselden sonraki piksele geçişin maliyeti gidilen pikselin RGB değerlerinden R’nin tersidir. R=0 için R=1 alınız. Buna göre noktalar arası yol kırmızı değeri yüksek piksellerden geçilerek oluşacaktır.
-- Girilen resmin boyutları (N*M) büyük olacaktır. N,M>1000. Bu durumda stack içindeki değerleri sıralamak uzun zaman alacaktır. Bu sebeple stack’in implementasyonu için heap yapısını da kullanarak performans farkını gösteriniz.   
-- Buna göre 4 algoritma geliştirilecektir. stack (dizi/heap), A* / ilk en iyi arama
-- Kullanıcının girdiği resim ve başlangıç/bitiş noktaları için 4 algoritmanın bulduğu yolları, stack ten çektikleri eleman sayısını, stackin içerdiği maksimum elaman sayısını ve arama süresini ekranda gösteriniz.
+* Yapay Zeka 1. Ödev
+* Kullanım
+Repoyu localinize klonlayın:
+
+#+begin_src bash
+  $ git clone https://github.com/seyyidibrahimgulec/ai-hw1.git
+#+end_src
+
+Proje klasöründe bir virtual environment oluşturup aktif edin:
+
+#+begin_src bash
+  $ python -m venv env
+  $ source env/bin/activate
+#+end_src
+
+Gereksinimleri indirin:
+
+#+begin_src bash
+  $ pip install -r requirements.txt
+#+end_src
+
+Kodu çalıştırın:
+
+#+begin_src bash
+  $ python main.py
+#+end_src
+* Ekran Görüntüleri
+** BFS
+[[file:bfs.png][bfs]]
+[[file:bfs2.png][bfs2]]
