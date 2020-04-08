@@ -38,3 +38,5 @@ def bfs(start_point=None, end_point=None):
     image.show()
 
     timer.print()
+    print("Total numberg of stack pops:", stack.total_pop)
+    print("Max length of stack:", stack.max_length)

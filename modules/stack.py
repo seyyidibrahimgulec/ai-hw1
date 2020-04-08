@@ -4,6 +4,7 @@ class Stack:
         self.max_length = 0
         self.visited = []
         self.last_pop = None
+        self.total_pop = 0
 
     def push(self, element):
         if not self.contains(element):
@@ -14,6 +15,7 @@ class Stack:
     def pop(self):
         self.last_pop = self.stack.pop(0)
         self.visited.append(self.last_pop)
+        self.total_pop += 1
         return self.last_pop
 
     def distance_sort(self, end_point):
