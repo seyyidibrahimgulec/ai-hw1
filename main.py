@@ -1,8 +1,10 @@
 from modules.best_first_search import bfs
+from modules.astar import astar
 
 
 if __name__ == "__main__":
-    bfs([675, 400], [150, 150])
+    # bfs([675, 400], [150, 150])
+    astar([675, 400], [150, 150])
     # timer = Timer()
 
     # timer.print()

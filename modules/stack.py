@@ -19,14 +19,14 @@ class Stack:
     def distance_sort(self, end_point):
         self.stack.sort(key=lambda point: point.distance(end_point))
 
-    def red_sort(self):
+    def red_sort(self, end_point):
         """
         En düşük maliyetliden yükseğe doğru sıralanıyor.
         """
         # NOTE: built-in sort yerine insert yapacak bir fonksiyon
         # yazılabilir. Sonuçta dizi sürekli sıralı olacak, sadece yeni
         # eklenen elemanlar aralara yerleşecek.
-        self.stack.sort(key=lambda point: 255 - point.r)
+        self.stack.sort(key=lambda point: (255 - point.r) + point.distance(end_point))
 
     def print(self):
         print(*self.stack, sep="\n")
