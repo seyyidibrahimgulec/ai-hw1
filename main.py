@@ -1,5 +1,5 @@
-from classes.img import read_image
-from classes.timer import Timer
+from modules.img import read_image
+from modules.timer import Timer
 
 import time
 
