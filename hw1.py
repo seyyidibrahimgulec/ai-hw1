@@ -1,6 +1,3 @@
-from PIL import image
-
-
 class Stack:
     """
     bilgi ver (kaç eleman girdi çıktı, max kaç oldu falan).
@@ -34,21 +31,6 @@ class Heap:
         pass
 
 
-class Image:
-    """
-    path'ten image oku try catch koy feedback ver. resime çizgi çek.
-    """
-
-    def __init__(self):
-        self.image = None
-
-    def read_image():
-        pass
-
-    def show_image():
-        pass
-
-
 class Time:
     def __init__(self):
         self.search_time = None
@@ -57,15 +39,6 @@ class Time:
         pass
 
     def stop_time():
-        pass
-
-
-class Point:
-    """
-    x,y ve renk var, uzaklık hesaplayabilir, etrafındaki noktaları hesaplayabilir.
-    """
-
-    def __init__(self):
         pass
 
 
@@ -82,11 +55,6 @@ class BestFirstSearch:
 if __name__ == "__main__":
     start_point = None
     end_point = None
-
-
-class Homework:
-    def __init__(self, start_point, end_point):
-        pass
 
 
 # from PIL import Image
